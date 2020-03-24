@@ -22,9 +22,9 @@ pipeline {
                     def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "simpleapp-snapshot" : "simpleapp-release"
                     nexusArtifactUploader artifacts: [
                         [
-                            artifactId: 'simple-app', 
+                            artifactId: '{mavenPom.artifactId}', 
                             classifier: '', 
-                            file: "target/simple-app-${mavenPom.version}.war", 
+                            file: "target/{mavenPom.artifactId}-${mavenPom.version}.war", 
                             type: 'war'
                         ]
                     ], 
