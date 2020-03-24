@@ -33,7 +33,7 @@ pipeline {
                     nexusUrl: '192.168.0.106:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: HCL-POC, 
+                    repository: nexusRepoName, 
                     version: "${mavenPom.version}"
                     }
             }
