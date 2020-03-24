@@ -1,7 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'maven3'
+        maven "MAVEN_HOME"
+        jdk "JDK"
     }
     options {
         buildDiscarder logRotator(daysToKeepStr: '5', numToKeepStr: '7')
@@ -29,10 +30,10 @@ pipeline {
                     ], 
                     credentialsId: 'nexus3', 
                     groupId: 'in.javahome', 
-                    nexusUrl: '172.31.15.204:8081', 
+                    nexusUrl: '192.168.0.106:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: nexusRepoName, 
+                    repository: HCL-POC, 
                     version: "${mavenPom.version}"
                     }
             }
